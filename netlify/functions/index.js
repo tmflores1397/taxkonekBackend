@@ -26,13 +26,6 @@ app.post('/send-email', upload.single('attachment'), (req, res) => {
   const formData = req.body;
   const attachment = req.file ? req.file.buffer : null;
   // Replace these values with your actual email credentials
-  const transporter = nodemailer.createTransport({
-    service: 'gmail',
-    auth: {
-      user: 'tmflores1397@gmail.com',
-      pass: 'vmcs klgp pueo kerd',
-    },
-  });
   const parsedData = JSON.parse(formData.data);
 
   const mailOptions = {
